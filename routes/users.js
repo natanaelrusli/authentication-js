@@ -80,7 +80,7 @@ router.post('/login', async (req, res) => {
     else if (user[0].password == password) {
         req.session.email = email
         req.session.name = user[0].name
-        res.render('dashboard', { user : req.session });
+        res.redirect('/');
     }
     else {
         res.render('login', {error : 'Wrong Password'})
